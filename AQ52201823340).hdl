@@ -1,0 +1,14 @@
+CHIP AQ52201823340) {
+
+    IN C, V, J;
+    OUT L;
+
+    PARTS:
+    Not (in=C, out=notC);
+    Not (in=V, out=notV);
+    And (a=notC, b=notV, out=y);
+    Or (a=V, b=C, out=x);
+    Or (a=x, b=y, out=z);
+    And (a=J, b=z, out=L);
+
+}
